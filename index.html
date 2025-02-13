@@ -4,17 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Your 3D Print</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background Gradient */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00b4d8, #0096c7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #fffbf5;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+            font-size: 1em;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="submit"] {
+            background-color: #0077b6; /* Darker blue shade */
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #023e8a; /* Even darker blue on hover */
+            transform: translateY(-3px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(1px);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Optional fancy button hover */
+        input[type="submit"]:focus {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Order Your 3D Print</h1>
-    <form action="https://formspree.io/f/myzkdngv" method="POST">
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <div>
+        <h1>Order Your 3D Print</h1>
+        <form action="https://formspree.io/f/myzkdngv" method="POST">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br>
 
-        <label for="details">Additional Details (Optional):</label><br>
-        <textarea id="details" name="details" rows="4" cols="50"></textarea><br><br>
+            <label for="details">Additional Details (Optional):</label><br>
+            <textarea id="details" name="details" rows="4" cols="50"></textarea><br><br>
 
-        <input type="submit" value="Order 3D Print">
-    </form>
+            <input type="submit" value="Order 3D Print">
+        </form>
+    </div>
 </body>
 </html>
