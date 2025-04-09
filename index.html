@@ -3,21 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rickroll Page</title>
+    <title>System Alert - Hacked</title>
+    <style>
+        body {
+            background-color: black;
+            color: green;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #alert-box {
+            border: 5px solid red;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: red;
+            animation: blink 1s infinite;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .glitch {
+            color: transparent;
+            position: relative;
+            text-shadow: 
+                -1px 0 red, 
+                1px 0 blue, 
+                0 -1px green, 
+                0 1px yellow;
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 
+                    -1px 0 red, 
+                    1px 0 blue, 
+                    0 -1px green, 
+                    0 1px yellow;
+            }
+            10% {
+                text-shadow: 
+                    -2px 0 red, 
+                    2px 0 blue, 
+                    0 -2px green, 
+                    0 2px yellow;
+            }
+            20% {
+                text-shadow: 
+                    2px 0 red, 
+                    -2px 0 blue, 
+                    0 2px green, 
+                    0 -2px yellow;
+            }
+            30% {
+                text-shadow: 
+                    -1px 0 red, 
+                    1px 0 blue, 
+                    0 -1px green, 
+                    0 1px yellow;
+            }
+            50% {
+                text-shadow: 
+                    1px 0 red, 
+                    -1px 0 blue, 
+                    0 1px green, 
+                    0 -1px yellow;
+            }
+            100% {
+                text-shadow: 
+                    -1px 0 red, 
+                    1px 0 blue, 
+                    0 -1px green, 
+                    0 1px yellow;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                visibility: visible;
+            }
+            50% {
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hack Script Genorator makes hacks just type what hack you want and it will make a java script hack for you this took so long to make and uses Ai so be very carful hacks sometimes don't work</h1>
-    <input type="text" id="userInput" placeholder="Start typing...">
-    
-    <script>
-        // Get the input element by ID
-        const inputElement = document.getElementById('userInput');
+    <div id="alert-box">
+        <h1>ALERT: SYSTEM COMPROMISED!</h1>
+        <p><span class="glitch">ERROR 404: SYSTEM BREACHED</span></p>
+        <p><span class="glitch">HACKING DETECTED...</span></p>
+        <p><span class="glitch">ACCESS DENIED!</span></p>
+        <p><span class="glitch">INTRUSION ALERT: SYSTEM FAILURE</span></p>
+    </div>
 
-        // Add an event listener to detect when the user types something
-        inputElement.addEventListener('input', function() {
-            // Redirect to Rickroll link as soon as the user types anything
-            window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-        });
+    <script>
+        // Randomly generate fake alerts for added effect
+        const messages = [
+            "Your files are being encrypted...",
+            "Password exposed to the intruder...",
+            "Sending private information...",
+            "Attempting system shutdown...",
+            "The hacker has control over your device!"
+        ];
+
+        setInterval(() => {
+            const newMessage = messages[Math.floor(Math.random() * messages.length)];
+            const alertBox = document.querySelector('#alert-box');
+            const messageElement = document.createElement('p');
+            messageElement.textContent = newMessage;
+            alertBox.appendChild(messageElement);
+        }, 3000);
     </script>
 </body>
 </html>
